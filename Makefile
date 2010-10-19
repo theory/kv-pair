@@ -5,7 +5,6 @@ REGRESS_OPTS = --inputdir=test
 DOCS = doc/pair.txt
 
 ifdef NO_PGXS
-subdir = contrib/citext
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
