@@ -1,0 +1,74 @@
+\set ECHO 0
+      SELECT pair('foo', 'bar')
+UNION SELECT pair('HEY'::text, 'bar')
+UNION SELECT pair('foo'::text, 'woah'::text)
+UNION SELECT pair('ick', 'foo'::text)
+UNION SELECT pair('foo'::text, 1)
+UNION SELECT pair(12.3, 'foo'::text)
+UNION SELECT pair(1, 12)
+ORDER BY pair;
+    pair    
+------------
+ (1,12)
+ (12.3,foo)
+ (HEY,bar)
+ (foo,1)
+ (foo,bar)
+ (foo,woah)
+ (ick,foo)
+(7 rows)
+
+      SELECT 'foo' ~> 'bar' AS arrowop
+UNION SELECT 'HEY'::text ~> 'bar'
+UNION SELECT 'foo'::text ~> 'woah'::text
+UNION SELECT 'ick' ~> 'foo'::text
+UNION SELECT 'foo'::text ~> 1
+UNION SELECT 12.3 ~> 'foo'::text
+UNION SELECT 1 ~> 12
+ORDER BY arrowop;
+  arrowop   
+------------
+ (1,12)
+ (12.3,foo)
+ (HEY,bar)
+ (foo,1)
+ (foo,bar)
+ (foo,woah)
+ (ick,foo)
+(7 rows)
+
+CREATE TABLE kv (
+    pair pair
+);
+INSERT INTO kv VALUES('foo' ~> 'bar'), (1 ~> 2);
+SELECT (pair).k, (pair).v FROM kv order by (pair).k;
+  k  |  v  
+-----+-----
+ 1   | 2
+ foo | bar
+(2 rows)
+
+SELECT (pair('foo', 'bar')).k;
+  k  
+-----
+ foo
+(1 row)
+
+SELECT (pair('foo', 'bar')).v;
+  v  
+-----
+ bar
+(1 row)
+
+SELECT ('foo' ~> 'bar').k;
+  k  
+-----
+ foo
+(1 row)
+
+SELECT ('foo' ~> 'bar').v;
+  v  
+-----
+ bar
+(1 row)
+
