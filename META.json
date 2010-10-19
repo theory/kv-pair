@@ -8,7 +8,7 @@
    ],
    "license": "postgresql",
    "provides": {
-      "pgtap": {
+      "pair": {
          "file": "sql/pair.sql",
          "version": "0.1.0"
       }
