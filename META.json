@@ -4,7 +4,7 @@
    "description": "This library contains a single PostgreSQL extension, a key/value pair data type called `pair`, along with a convenience function for constructing key/value pairs.",
    "version": "0.1.0",
    "maintainer": [
-      "David E. Wheeler <theory@pgxn.org>"
+      "David E. Wheeler <david@justatheory.com>"
    ],
    "license": "postgresql",
    "provides": {
