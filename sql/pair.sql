@@ -43,3 +43,4 @@ CREATE OPERATOR ~> (
 	PROCEDURE = pair
 );
 
+COMMIT;

@@ -4,6 +4,8 @@ Revision history for PostgreSQL extension pair.
       - Fixed metadata file to list "pair" as the extension, not "pgtap".
       - Added Changes file.
       - Eliminated a line in the `Makefile` with "pgtap" in it. D'oh!
+      - Added `COMMIT` to the end of `sql/pair.sql`. Might help with
+        installation.
 
 0.1.0 2010-10-18T20:59:54Z
       - Initial version.
