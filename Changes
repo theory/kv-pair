@@ -6,6 +6,8 @@ Revision history for PostgreSQL extension pair.
       - Eliminated a line in the `Makefile` with "pgtap" in it. D'oh!
       - Added `COMMIT` to the end of `sql/pair.sql`. Might help with
         installation.
+      - Using more `wildcard` more in the `Makefile` so that we don't have to
+        maintain it manually when files are added or removed.
 
 0.1.0 2010-10-18T20:59:54Z
       - Initial version.
