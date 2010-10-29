@@ -25,7 +25,7 @@ CREATE TABLE kv (
 );
 
 INSERT INTO kv VALUES('foo' ~> 'bar'), (1 ~> 2);
-SELECT (pair).k, (pair).v FROM kv order by (pair).k;
+SELECT (pair).k, (pair).v FROM kv ORDER BY (pair).k;
 
 SELECT (pair('foo', 'bar')).k;
 SELECT (pair('foo', 'bar')).v;
