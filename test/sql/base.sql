@@ -1,6 +1,4 @@
-\set ECHO 0
-\i sql/pair.sql
-\set ECHO all
+CREATE EXTENSION pair;
 
       SELECT pair('foo', 'bar')
 UNION SELECT pair('HEY'::text, 'bar')
