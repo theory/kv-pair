@@ -1,5 +1,5 @@
 -- Adjust this setting to control where the objects get created.
-SET search_path = public;
+SET search_path = @extschema@;
 
 SET client_min_messages = warning;
 

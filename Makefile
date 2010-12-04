@@ -4,6 +4,9 @@ TESTS = $(wildcard test/sql/*.sql)
 REGRESS = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test
 
+EXTENSION = pair
+EXTVERSION = 0.1.2
+
 ifdef NO_PGXS
 top_builddir = ../..
 include $(top_builddir)/src/Makefile.global

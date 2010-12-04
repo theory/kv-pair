@@ -1,0 +1,3 @@
+# pair extension
+comment = 'A key/value pair data type'
+version = 'EXTVERSION'
