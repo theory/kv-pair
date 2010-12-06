@@ -1,4 +1,6 @@
+SET client_min_messages = warning;
 CREATE EXTENSION pair;
+RESET client_min_messages;
 
       SELECT pair('foo', 'bar')
 UNION SELECT pair('HEY'::text, 'bar')

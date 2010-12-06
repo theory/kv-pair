@@ -3,8 +3,6 @@ SET search_path = @extschema@;
 
 SET client_min_messages = warning;
 
-BEGIN;
-
 CREATE TYPE pair AS ( k text, v text );
 
 CREATE OR REPLACE FUNCTION pair(anyelement, text)
@@ -42,5 +40,3 @@ CREATE OPERATOR ~> (
 	RIGHTARG  = text,
 	PROCEDURE = pair
 );
-
-COMMIT;
