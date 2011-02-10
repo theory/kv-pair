@@ -56,7 +56,7 @@ You need to run the test suite using a super user, such as the default
 
 Dependencies
 ------------
-The `pair` date type has no dependencies other than PostgreSQL.
+The `pair` data type has no dependencies other than PostgreSQL.
 
 Copyright and License
 ---------------------
