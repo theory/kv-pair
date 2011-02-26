@@ -2,6 +2,7 @@ Revision history for PostgreSQL extension pair.
 
 0.1.2
       - Properly updated version number in all relevant files.
+      - Added abstract to the `provides` section of `META.json`.
 
 0.1.1 2010-10-29T22:42:05
       - Fixed metadata file to list "pair" as the extension, not "pgtap".
