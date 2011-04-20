@@ -11,6 +11,7 @@
       "pair": {
          "abstract": "A key/value pair data type",
          "file": "sql/pair.sql",
+         "docfile": "doc/pair.md",
          "version": "0.1.2"
       }
    },

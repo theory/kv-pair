@@ -2,7 +2,7 @@ Revision history for PostgreSQL extension pair.
 
 0.1.2
       - Properly updated version number in all relevant files.
-      - Added abstract to the `provides` section of `META.json`.
+      - Added abstract and doc file to the `provides` section of `META.json`.
       - Changed doc extension to `.md` so that it will be parsed as Markdown
         by PGXN.
 
