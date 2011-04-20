@@ -4,6 +4,9 @@ pair 0.1.2
 Synopsis
 --------
 
+    % CREATE EXTENSION pair;
+    CREATE EXTENSION
+
     % SELECT pair('foo', 'bar');
         pair    
     ------------
@@ -61,7 +64,7 @@ To access the values, just use the `k` and `v` column names:
     -----
      bar
 
-KInd of ugly, huh? Well pairs aren't very useful on their own. Where they
+Kind of ugly, huh? Well pairs aren't very useful on their own. Where they
 really come into their own is when used as the last parameter to a variadic
 function.
 
@@ -104,7 +107,7 @@ Author
 Copyright and License
 ---------------------
 
-Copyright (c) 2010 David E. Wheeler.
+Copyright (c) 2010-2011 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).

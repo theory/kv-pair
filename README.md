@@ -4,7 +4,7 @@ pair 0.1.2
 This library contains a single PostgreSQL extension, a key/value pair data
 type called `pair`, along with a convenience function for constructing
 key/value pairs. It's just a simple thing, really: a two-value composite type
-that can store any type of value in its slots, which are named "k" and "v".
+that can store any type of value in its slots, which are named `k` and `v`.
 
 The `pair` data type was created as an inspiration, as documented in
 [this blog post](http://justatheory.com/computers/databases/postgresql/key-value-pairs.html).
@@ -54,6 +54,28 @@ You need to run the test suite using a super user, such as the default
 
     make installcheck PGUSER=postgres
 
+Once pair is installed, you can add it to a database. If you're running
+PostgreSQL 9.1.0 or greater, it's a simple as connecting to a database as a
+super user and running:
+
+    CREATE EXTENSION pair;
+
+If you've upgraded your cluster to PostgreSQL 9.1 and already had pair
+installed, you can upgrade it to a properly packaged extension with:
+
+    CREATE EXTENSION pair FROM unpackaged;
+
+For versions of PostgreSQL less than 9.1.0, you'll need to run the
+installation script:
+
+    psql -d mydb -f /path/to/pgsql/share/contrib/pair.sql
+
+If you want to install pair and all of its supporting objects into a specific
+schema, use the `PGOPTIONS` environment variable to specify the schema, like
+so:
+
+    PGOPTIONS=--search_path=extensions psql -d mydb -f pair.sql
+
 Dependencies
 ------------
 The `pair` data type has no dependencies other than PostgreSQL.
@@ -61,7 +83,7 @@ The `pair` data type has no dependencies other than PostgreSQL.
 Copyright and License
 ---------------------
 
-Copyright (c) 2010 David E. Wheeler.
+Copyright (c) 2010-2011 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).
