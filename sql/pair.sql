@@ -1,9 +1,4 @@
--- Adjust this setting to control where the objects get created.
-SET search_path = public;
-
 SET client_min_messages = warning;
-
-BEGIN;
 
 CREATE TYPE pair AS ( k text, v text );
 
@@ -42,5 +37,3 @@ CREATE OPERATOR ~> (
 	RIGHTARG  = text,
 	PROCEDURE = pair
 );
-
-COMMIT;

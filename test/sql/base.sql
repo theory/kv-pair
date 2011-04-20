@@ -1,4 +1,5 @@
 \set ECHO 0
+BEGIN;
 \i sql/pair.sql
 \set ECHO all
 
@@ -32,3 +33,4 @@ SELECT (pair('foo', 'bar')).v;
 
 SELECT ('foo' ~> 'bar').k;
 SELECT ('foo' ~> 'bar').v;
+ROLLBACK;

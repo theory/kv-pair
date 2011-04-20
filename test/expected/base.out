@@ -72,3 +72,4 @@ SELECT ('foo' ~> 'bar').v;
  bar
 (1 row)
 
+ROLLBACK;
