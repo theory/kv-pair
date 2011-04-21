@@ -8,22 +8,22 @@ Synopsis
     CREATE EXTENSION
 
     % SELECT pair('foo', 'bar');
-        pair    
+        pair
     ------------
      (foo,bar)
 
-     % SELECT 'foo' ~> 'bar';
-         pair    
-     ------------
-      (foo,bar)
-    
+    % SELECT 'foo' ~> 'bar';
+        pair
+    ------------
+     (foo,bar)
+
 Description
 -----------
 
 This library contains a single PostgreSQL extension, a key/value pair data
 type called `pair`, along with a convenience function for constructing
 key/value pairs. It's just a simple thing, really: a two-value composite type
-that can store any type of value in its slots, which are named "k" and "v".
+that can store any type of value in its slots, which are named `k` and `v`.
 
 So what's it good for? Well, the main idea is if you have a custom function to
 which you'd like to be able to pass any number of key/value pairs. You could
