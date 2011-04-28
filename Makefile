@@ -1,5 +1,6 @@
-EXTENSION=pair
-EXTVERSION=0.1.2
+EXTENSION  =pair
+EXTVERSION = $(shell grep default_version $(EXTENSION).control | \
+             sed -e "s/default_version[[:space:]]*=[[:space:]]*'\([^']*\)'/\1/")
 
 DATA = $(filter-out $(wildcard sql/*--*.sql),$(wildcard sql/*.sql))
 DOCS = $(wildcard doc/*.txt)
