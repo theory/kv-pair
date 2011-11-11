@@ -3,23 +3,23 @@ BEGIN;
 \i sql/pair.sql
 \set ECHO all
 
-      SELECT pair('foo', 'bar')
-UNION SELECT pair('HEY'::text, 'bar')
-UNION SELECT pair('foo'::text, 'woah'::text)
-UNION SELECT pair('ick', 'foo'::text)
-UNION SELECT pair('foo'::text, 1)
-UNION SELECT pair(12.3, 'foo'::text)
-UNION SELECT pair(1, 12)
-ORDER BY pair;
+SELECT pair('foo', 'bar')
+     , pair('HEY'::text, 'bar')
+     , pair('foo'::text, 'woah'::text)
+     , pair('ick', 'foo'::text)
+     , pair('foo'::text, 1)
+     , pair(12.3, 'foo'::text)
+     , pair(1, 12)
+;
 
-      SELECT 'foo' ~> 'bar' AS arrowop
-UNION SELECT 'HEY'::text ~> 'bar'
-UNION SELECT 'foo'::text ~> 'woah'::text
-UNION SELECT 'ick' ~> 'foo'::text
-UNION SELECT 'foo'::text ~> 1
-UNION SELECT 12.3 ~> 'foo'::text
-UNION SELECT 1 ~> 12
-ORDER BY arrowop;
+SELECT 'foo' ~> 'bar' AS arrowop
+     , 'HEY'::text ~> 'bar'
+     , 'foo'::text ~> 'woah'::text
+     , 'ick' ~> 'foo'::text
+     , 'foo'::text ~> 1
+     , 12.3 ~> 'foo'::text
+     , 1 ~> 12
+;
 
 CREATE TABLE kv (
     pair pair
