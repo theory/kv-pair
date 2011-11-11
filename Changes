@@ -1,6 +1,6 @@
 Revision history for PostgreSQL extension pair.
 
-0.1.4
+0.1.4 2011-11-11T06:52:04Z
       - Fixed the `Makefile` so that the documentation file should properly be
         found and installed by `PGXS`.
 
