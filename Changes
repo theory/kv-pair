@@ -1,5 +1,7 @@
 Revision history for PostgreSQL extension pair.
 
+0.1.6
+
 0.1.5 2011-11-11T17:55:06Z
       - Removed the `$MODULES` variable from the `Makefile` to fix an
         installation error. Thanks to Daniele Varrazzo for the report.
