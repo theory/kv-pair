@@ -1,4 +1,4 @@
-pair 0.1.4
+pair 0.1.5
 ==========
 
 This library contains a single PostgreSQL extension, a key/value pair data
