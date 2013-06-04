@@ -5,6 +5,8 @@ Revision history for PostgreSQL extension pair.
         varying locales. Thanks to Daniele Varrazzo for the report.
       - Updated the `Makefile` to reflect the recommended patterns from
         pgsql-hackers. Thanks to Cédric Villemain for the details.
+      - Fixed the Makefile to allow `PG_CONFIG=/path/to/pg_config` to actually
+        work.
 
 0.1.5 2011-11-11T17:55:06Z
       - Removed the `$MODULES` variable from the `Makefile` to fix an
