@@ -1,6 +1,7 @@
-EXTENSION    = pair
-EXTVERSION   = $(shell grep default_version $(EXTENSION).control | \
-               sed -e "s/default_version[[:space:]]*=[[:space:]]*'\([^']*\)'/\1/")
+EXTENSION    = $(shell grep -m 1 '"name":' META.json | \
+               sed -e 's/[[:space:]]*"name":[[:space:]]*"\([^"]*\)",/\1/')
+EXTVERSION   = $(shell grep -m 1 '"version":' META.json | \
+               sed -e 's/[[:space:]]*"version":[[:space:]]*"\([^"]*\)",/\1/')
 
 DATA         = $(filter-out $(wildcard sql/*--*.sql),$(wildcard sql/*.sql))
 DOCS         = $(wildcard doc/*.md)
@@ -26,4 +27,4 @@ sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
 endif
 
 dist:
-	git archive --format zip --prefix=$(EXTENSION)-$(EXTVERSION)/ --output $(EXTENSION)-$(EXTVERSION).zip HEAD
+	git archive --format zip --prefix=$(EXTENSION)-$(EXTVERSION)/ -o $(EXTENSION)-$(EXTVERSION).zip HEAD
