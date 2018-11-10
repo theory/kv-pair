@@ -2,7 +2,7 @@
    "name": "pair",
    "abstract": "A key/value pair data type",
    "description": "This library contains a single PostgreSQL extension, a key/value pair data type called “pair”, along with a convenience function for constructing key/value pairs.",
-   "version": "0.1.6",
+   "version": "0.1.7",
    "maintainer": [
       "David E. Wheeler <david@justatheory.com>"
    ],

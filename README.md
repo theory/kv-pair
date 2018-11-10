@@ -1,4 +1,4 @@
-pair 0.1.6
+pair 0.1.7
 ==========
 
 [![PGXN version](https://badge.fury.io/pg/pair.svg)](https://badge.fury.io/pg/pair)
