@@ -9,6 +9,7 @@ Revision history for PostgreSQL extension pair.
       - Changed the Makefile to read the distribution name and version from
         META.json.
       - Fixed test failure on Postgres 11.
+      - Dropped support for Postgres 8.2 and lower.
 
 0.1.5 2011-11-11T17:55:06Z
       - Removed the `$MODULES` variable from the `Makefile` to fix an
