@@ -1,4 +1,4 @@
-\set ECHO 0
+\set ECHO none
 SELECT pair('foo', 'bar')
      , pair('HEY'::text, 'bar')
      , pair('foo'::text, 'woah'::text)

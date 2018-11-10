@@ -1,6 +1,9 @@
 pair 0.1.6
 ==========
 
+[![PGXN version](https://badge.fury.io/pg/pair.svg)](https://badge.fury.io/pg/pair)
+[![Build Status](https://travis-ci.org/theory/kv-pair.png)](https://travis-ci.org/theory/kv-pair)
+
 This library contains a single PostgreSQL extension, a key/value pair data
 type called `pair`, along with a convenience function for constructing
 key/value pairs. It's just a simple thing, really: a two-value composite type
