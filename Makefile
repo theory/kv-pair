@@ -12,7 +12,7 @@ PG_CONFIG   ?= pg_config
 PG91         = $(shell $(PG_CONFIG) --version | grep -qE " 8\.| 9\.0" && echo no || echo yes)
 
 ifeq ($(PG91),yes)
-DATA = $(wildcard sql/*--*.sql) sql/$(EXTENSION)--$(EXTVERSION).sql
+DATA = $(wildcard sql/*--*.sql)
 EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
 endif
 
@@ -30,4 +30,3 @@ dist:
 	$(eval DISTVERSION = $(shell grep -m 1 '[[:space:]]\{3\}"version":' META.json | \
                sed -e 's/[[:space:]]*"version":[[:space:]]*"\([^"]*\)",\{0,1\}/\1/'))
 	git archive --format zip --prefix=$(EXTENSION)-$(DISTVERSION)/ -o $(EXTENSION)-$(DISTVERSION).zip HEAD
-

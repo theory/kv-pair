@@ -10,6 +10,8 @@ Revision history for PostgreSQL extension pair.
         META.json.
       - Fixed test failure on Postgres 11.
       - Dropped support for Postgres 8.2 and lower.
+      - Fixed Makefile issue with dupe file names that some installers don't
+        like.
 
 0.1.5 2011-11-11T17:55:06Z
       - Removed the `$MODULES` variable from the `Makefile` to fix an
