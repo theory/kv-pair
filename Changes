@@ -1,6 +1,7 @@
 Revision history for PostgreSQL extension pair.
 
-0.1.6
+0.1.7
+      - Fixed failure to run tests on PostgreSQL 13.
 
 0.1.6 2018-11-10T20:56:14Z
       - Made the tests collation-insensitive, so that failures won't occur for
