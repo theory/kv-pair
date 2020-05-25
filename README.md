@@ -2,7 +2,7 @@ pair 0.1.7
 ==========
 
 [![PGXN version](https://badge.fury.io/pg/pair.svg)](https://badge.fury.io/pg/pair)
-[![Build Status](https://travis-ci.org/theory/kv-pair.png)](https://travis-ci.org/theory/kv-pair)
+[![Build Status](https://github.com/theory/kv-pair/workflows/CI/badge.svg)](https://github.com/theory/kv-pair/actions)
 
 This library contains a single PostgreSQL extension, a key/value pair data
 type called `pair`, along with a convenience function for constructing
