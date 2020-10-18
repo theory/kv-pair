@@ -25,15 +25,18 @@ type called `pair`, along with a convenience function for constructing
 key/value pairs. It's just a simple thing, really: a two-value composite type
 that can store any type of value in its slots, which are named `k` and `v`.
 
-So what's it good for? Well, the main idea is if you have a custom function to
-which you'd like to be able to pass any number of key/value pairs. You could
-use [hstore](http://www.postgresql.org/docs/current/static/hstore.html) of
-course, but maybe it's overkill, or you need to guarantee the order in which
-the pairs are passed. If so, then this extension is for you.
+So what's it good for? Well, say you have a custom function to which you'd like
+to be able to pass any number of key/value pairs. You could use
+[hstore](https://www.postgresql.org/docs/current/static/hstore.html) of course,
+but maybe it's overkill, or you need to guarantee the order in which the pairs
+are passed. [JSON](https://www.postgresql.org/docs/current/datatype-json.html)
+can also do the trick, but then what's to stop someone from passing a JSON
+object rather than an array of arrays. If all you need is pairs, this extension
+is for you.
 
 The `pair` data type was created as an inspiration, as documented in
-[this blog post](http://justatheory.com/computers/databases/postgresql/key-value-pairs.html).
-Give it a read if you're interested in the context of its creation.
+[this blog post](https://justatheory.com/2010/08/postgres-key-value-pairs/).
+Give it a read if you're interested in the context for its creation.
 
 Usage
 -----
@@ -94,23 +97,23 @@ And to use it, pass in any number of pairs you like:
 Support
 -------
 
-This library is stored in an open [GitHub
-repository](http://github.com/theory/kv-pair). Feel free to fork and
-contribute! Please file bug reports via [GitHub
-Issues](http://github.com/theory/kv-pair/issues/).
+This library is stored in an open
+[GitHub repository](https://github.com/theory/kv-pair). Feel free to fork and
+contribute! Please file bug reports via
+[GitHub Issues](https://github.com/theory/kv-pair/issues/).
 
 Author
 ------
 
-[David E. Wheeler](http://justatheory.com/)
+[David E. Wheeler](https://justatheory.com/)
 
 Copyright and License
 ---------------------
 
-Copyright (c) 2010-2018 David E. Wheeler.
+Copyright (c) 2010-2020 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
-the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).
+the [PostgreSQL License](https://www.opensource.org/licenses/postgresql).
 
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose, without fee, and without a written agreement is

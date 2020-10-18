@@ -10,8 +10,8 @@ key/value pairs. It's just a simple thing, really: a two-value composite type
 that can store any type of value in its slots, which are named `k` and `v`.
 
 The `pair` data type was created as an inspiration, as documented in
-[this blog post](http://justatheory.com/computers/databases/postgresql/key-value-pairs.html).
-Give it a read if you're interested in the context of its creation.
+[this blog post](https://justatheory.com/2010/08/postgres-key-value-pairs/).
+Give it a read if you're interested in the context for its creation.
 
 To build it, just do this:
 
@@ -61,7 +61,7 @@ installed, you can upgrade it to a properly packaged extension with:
 
     CREATE EXTENSION pair FROM unpackaged;
 
-For versions of PostgreSQL less than 9.1.0, you'll need to run the
+For versions of PostgreSQL less than 9.1, you'll need to run the
 installation script:
 
     psql -d mydb -f /path/to/pgsql/share/contrib/pair.sql
@@ -79,10 +79,10 @@ The `pair` data type has no dependencies other than PostgreSQL.
 Copyright and License
 ---------------------
 
-Copyright (c) 2010-2018 David E. Wheeler.
+Copyright (c) 2010-2020 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
-the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).
+the [PostgreSQL License](https://www.opensource.org/licenses/postgresql).
 
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose, without fee, and without a written agreement is
