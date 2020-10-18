@@ -1,7 +1,5 @@
-\set ECHO none
 BEGIN;
-\i sql/pair.sql
-\set ECHO all
+CREATE EXTENSION pair;
 
 SELECT pair('foo', 'bar')
      , pair('HEY'::text, 'bar')

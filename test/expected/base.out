@@ -1,4 +1,5 @@
-\set ECHO none
+BEGIN;
+CREATE EXTENSION pair;
 SELECT pair('foo', 'bar')
      , pair('HEY'::text, 'bar')
      , pair('foo'::text, 'woah'::text)

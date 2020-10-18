@@ -50,27 +50,20 @@ You need to run the test suite using a super user, such as the default
 
     make installcheck PGUSER=postgres
 
-Once pair is installed, you can add it to a database. If you're running
-PostgreSQL 9.1.0 or greater, it's a simple as connecting to a database as a
-super user and running:
+Once pair is installed, you can add it to a database simply by connecting as
+a super user and running:
 
     CREATE EXTENSION pair;
 
-If you've upgraded your cluster to PostgreSQL 9.1 and already had pair
-installed, you can upgrade it to a properly packaged extension with:
+If you want to install pair and all of its supporting objects into a specific
+schema, use the `SCHEMA` clause to specify the schema, like so:
+
+    CREATE EXTENSION pair SCHEMA extensions;
+
+If you've upgraded your cluster from PostgreSQL 9.0 or earlier and already had
+pair installed, you can upgrade it to a properly packaged extension with:
 
     CREATE EXTENSION pair FROM unpackaged;
-
-For versions of PostgreSQL less than 9.1, you'll need to run the
-installation script:
-
-    psql -d mydb -f /path/to/pgsql/share/contrib/pair.sql
-
-If you want to install pair and all of its supporting objects into a specific
-schema, use the `PGOPTIONS` environment variable to specify the schema, like
-so:
-
-    PGOPTIONS=--search_path=extensions psql -d mydb -f pair.sql
 
 Dependencies
 ------------
