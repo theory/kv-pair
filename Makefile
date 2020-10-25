@@ -24,3 +24,6 @@ dist:
 	$(eval DISTVERSION = $(shell grep -m 1 '[[:space:]]\{3\}"version":' META.json | \
                sed -e 's/[[:space:]]*"version":[[:space:]]*"\([^"]*\)",\{0,1\}/\1/'))
 	git archive --format zip --prefix=$(EXTENSION)-$(DISTVERSION)/ -o $(EXTENSION)-$(DISTVERSION).zip HEAD
+
+latest-changes.md: Changes
+	perl -e 'while (<>) {next unless /^(v?\d\S+)/; print "Changes for v$$1:\n"; last } while (<>) { last if /^\s*$$/; s/^\s+//; print }' Changes > $@
