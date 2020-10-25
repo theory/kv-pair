@@ -26,4 +26,4 @@ dist:
 	git archive --format zip --prefix=$(EXTENSION)-$(DISTVERSION)/ -o $(EXTENSION)-$(DISTVERSION).zip HEAD
 
 latest-changes.md: Changes
-	perl -e 'while (<>) {next unless /^(v?\d\S+)/; print "Changes for v$$1:\n"; last } while (<>) { last if /^\s*$$/; s/^\s+//; print }' Changes > $@
+	perl -e 'while (<>) {last if /^(v?\Q${EXTVERSION}\E)/; } print "Changes for v${EXTVERSION}:\n"; while (<>) { last if /^\s*$$/; s/^\s+//; print }' Changes > $@
