@@ -11,7 +11,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       PGXN_USERNAME: ${{ secrets.PGXN_USERNAME }}
-      PGXN_USERNAME: ${{ secrets.PGXN_PASSWORD }}
+      PGXN_PASSWORD: ${{ secrets.PGXN_PASSWORD }}
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
