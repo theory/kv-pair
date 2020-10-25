@@ -1,6 +1,6 @@
 Revision history for PostgreSQL extension pair.
 
-0.1.7
+0.1.7  2020-10-25T21:52:57Z
       - Fixed failure to run tests on PostgreSQL 13.
       - Updated documentation, links.
       - Dropped support for Postgres 9.0 and lower.
