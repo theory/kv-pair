@@ -110,7 +110,7 @@ Author
 Copyright and License
 ---------------------
 
-Copyright (c) 2010-2020 David E. Wheeler.
+Copyright (c) 2010-2024 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](https://www.opensource.org/licenses/postgresql).
