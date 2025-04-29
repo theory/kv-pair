@@ -15,55 +15,88 @@ Give it a read if you're interested in the context for its creation.
 
 To build it, just do this:
 
-    make
-    make installcheck
-    make install
+```sh
+make
+make installcheck
+make install
+```
 
 If you encounter an error such as:
 
-    "Makefile", line 8: Need an operator
+```
+"Makefile", line 8: Need an operator
+```
 
 You need to use GNU make, which may well be installed on your system as
 `gmake`:
 
-    gmake
-    gmake install
-    gmake installcheck
+```sh
+gmake
+gmake install
+gmake installcheck
+```
 
 If you encounter an error such as:
 
-    make: pg_config: Command not found
+```
+make: pg_config: Command not found
+```
 
 Be sure that you have `pg_config` installed and in your path. If you used a
 package management system such as RPM to install PostgreSQL, be sure that the
 `-devel` package is also installed. If necessary tell the build process where
 to find it:
 
-    env PG_CONFIG=/path/to/pg_config make && make installcheck && make install
+```sh
+env PG_CONFIG=/path/to/pg_config make && make installcheck && make install
+```
 
 If you encounter an error such as:
 
-    ERROR:  must be owner of database regression
+```
+ERROR:  must be owner of database regression
+```
 
 You need to run the test suite using a super user, such as the default
 "postgres" super user:
 
-    make installcheck PGUSER=postgres
+```sh
+make installcheck PGUSER=postgres
+```
+
+To install the extension in a custom prefix on PostgreSQL 18 or later, pass
+the `prefix` argument to `install` (but no other `make` targets):
+
+    make install prefix=/usr/local/extras
+
+Then ensure that the prefix is included in the following [`postgresql.conf`
+parameters]:
+
+```ini
+extension_control_path = '/usr/local/extras/postgresql/share:$system'
+dynamic_library_path   = '/usr/local/extras/postgresql/lib:$libdir'
+```
 
 Once pair is installed, you can add it to a database simply by connecting as
 a super user and running:
 
-    CREATE EXTENSION pair;
+```sql
+CREATE EXTENSION pair;
+```
 
 If you want to install pair and all of its supporting objects into a specific
 schema, use the `SCHEMA` clause to specify the schema, like so:
 
-    CREATE EXTENSION pair SCHEMA extensions;
+```sql
+CREATE EXTENSION pair SCHEMA extensions;
+```
 
 If you've upgraded your cluster from PostgreSQL 9.0 or earlier and already had
 pair installed, you can upgrade it to a properly packaged extension with:
 
-    CREATE EXTENSION pair FROM unpackaged;
+```sql
+CREATE EXTENSION pair FROM unpackaged;
+```
 
 Dependencies
 ------------
@@ -72,7 +105,7 @@ The `pair` data type has no dependencies other than PostgreSQL.
 Copyright and License
 ---------------------
 
-Copyright (c) 2010-2024 David E. Wheeler.
+Copyright (c) 2010-2025 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](https://www.opensource.org/licenses/postgresql).

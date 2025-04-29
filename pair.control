@@ -1,5 +1,5 @@
 # pair extension
 comment = 'A key/value pair data type'
 default_version = '0.1.2'
-module_pathname = '$libdir/pair'
+module_pathname = 'pair'
 relocatable = true

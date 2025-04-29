@@ -4,18 +4,20 @@ pair 0.1.2
 Synopsis
 --------
 
-    % CREATE EXTENSION pair;
-    CREATE EXTENSION
+```psql
+% CREATE EXTENSION pair;
+CREATE EXTENSION
 
-    % SELECT pair('foo', 'bar');
-        pair
-    ------------
-     (foo,bar)
+% SELECT pair('foo', 'bar');
+    pair
+------------
+ (foo,bar)
 
-    % SELECT 'foo' ~> 'bar';
-        pair
-    ------------
-     (foo,bar)
+% SELECT 'foo' ~> 'bar';
+    pair
+------------
+ (foo,bar)
+```
 
 Description
 -----------
@@ -42,30 +44,35 @@ Usage
 -----
 There are two ways to construct key/value pairs: Via the `pair()` function:
 
-    % SELECT pair('foo', 'bar');
-        pair    
-    ------------
-     (foo,bar)
+```psql
+% SELECT pair('foo', 'bar');
+    pair
+------------
+ (foo,bar)
+```
 
 Or by using the `~>` operator:
 
-    % SELECT 'foo' ~> 'bar';
-        pair    
-    ------------
-     (foo,bar)
+```psql
+% SELECT 'foo' ~> 'bar';
+    pair
+------------
+ (foo,bar)
+```
 
 To access the values, just use the `k` and `v` column names:
 
-    SELECT ('foo' ~> 'bar').k;
-      k  
-    -----
-     foo
-    (1 row)
+```psql
+% SELECT ('foo' ~> 'bar').k;
+  k
+-----
+ foo
 
-    SELECT ('foo' ~> 'bar').v;
-      v  
-    -----
-     bar
+% SELECT ('foo' ~> 'bar').v;
+  v
+-----
+ bar
+```
 
 Kind of ugly, huh? Well pairs aren't very useful on their own. Where they
 really come into their own is when used as the last parameter to a variadic
@@ -74,25 +81,29 @@ function.
 For example, say you wanted a function to store any number of key/value pairs
 in a table. Here's what it might look like:
 
-    CREATE OR REPLACE FUNCTION store(
-        params variadic pair[]
-    ) RETURNS VOID LANGUAGE plpgsql AS $$
-    DECLARE
-        param pair;
-    BEGIN
-        FOR param IN SELECT * FROM unnest(params) LOOP
-            UPDATE kvstore
-               SET value = param.v,
-             WHERE key = param.k;
-            CONTINUE WHEN FOUND;
-            INSERT INTO kvstore (key, value) VALUES (param.k, param.v);
-        END LOOP;
-    END;
-    $$;
+```sql
+CREATE OR REPLACE FUNCTION store(
+    params variadic pair[]
+) RETURNS VOID LANGUAGE plpgsql AS $$
+DECLARE
+    param pair;
+BEGIN
+    FOR param IN SELECT * FROM unnest(params) LOOP
+        UPDATE kvstore
+            SET value = param.v,
+            WHERE key = param.k;
+        CONTINUE WHEN FOUND;
+        INSERT INTO kvstore (key, value) VALUES (param.k, param.v);
+    END LOOP;
+END;
+$$;
+```
 
 And to use it, pass in any number of pairs you like:
 
-    SELECT store( 'foo' ~> 'bar', 'baz' ~> 1 );
+```sql
+SELECT store( 'foo' ~> 'bar', 'baz' ~> 1 );
+```
 
 Support
 -------
@@ -110,7 +121,7 @@ Author
 Copyright and License
 ---------------------
 
-Copyright (c) 2010-2024 David E. Wheeler.
+Copyright (c) 2010-2025 David E. Wheeler.
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](https://www.opensource.org/licenses/postgresql).
