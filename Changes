@@ -1,6 +1,12 @@
 Revision history for PostgreSQL extension pair.
 
-0.1.8
+0.1.8 2025-04-29T17:28:57Z
+      - Removed the `$libdir/` prefix from the `module_pathname` directive in
+        `pair.control`. No impact.
+      - Removed `.github` from the release tarball.
+      - Added Postgres 15-18 to the test matrix.
+      - Reformated Markdown code blocks to use fenced syntax.
+      - The version of the extension itself remains 0.1.2.
 
 0.1.7  2020-10-25T21:52:57Z
       - Fixed failure to run tests on PostgreSQL 13.
